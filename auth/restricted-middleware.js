@@ -3,7 +3,7 @@ module.exports = (req, res, next) => {
         next();
     } else {
         res.status(401).json({
-            message: 'not logged in'
+            message: 'you shall not pass!'
         });
     }
 };

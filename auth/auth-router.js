@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
-const Users = require('../users/users-model');
+const Users = require('../users/users-model.js');
 
 router.post('/register', async (req, res) => {
     const user = req.body;
@@ -12,6 +12,7 @@ router.post('/register', async (req, res) => {
         const saved = await Users.add(user);
         res.status(201).json(saved);
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
